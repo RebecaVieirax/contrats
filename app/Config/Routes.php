@@ -22,3 +22,11 @@ $routes->post('login/verificarEmail', 'Login::verificarEmail');
 $routes->post('login/salvarNovaSenha', 'Login::salvarNovaSenha');
 $routes->post('contrato/cadastrar', 'ContratoController::cadastrar');
 $routes->get('logout', 'Login::logout'); // ou 'Painel::logout' se estiver lá
+$routes->get('contratos', 'Contratos::index');
+$routes->get('contratos/novo', 'Contratos::novo');
+$routes->post('contratos/salvar', 'Contratos::salvar');
+$routes->get('dominios/novo', 'Dominios::novo');
+$routes->post('dominios/salvar', 'Dominios::salvar');
+$routes->get('dominios', 'Dominios::index');
+$routes->get('dominios/novo', 'Dominios::novo');
+$routes->post('dominios/salvar', 'Dominios::salvar');
