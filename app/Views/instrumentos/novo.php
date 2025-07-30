@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Inserir Nova Licitação</title>
+    <title>Inserir Instrumento Contratual</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -38,6 +38,7 @@
             background-color: #f2f2f2;
             box-shadow: inset 1px 1px 3px #ccc;
         }
+
         button {
             display: block;
             margin: 0 auto;
@@ -64,6 +65,7 @@
         }
     </style>
 </head>
+
 <div style="text-align: left; margin-bottom: 20px;">
     <a href="<?= base_url('index.php/painel') ?>" 
        style="
@@ -79,6 +81,7 @@
         ← Voltar
     </a>
 </div>
+
 <img src="<?= base_url('assets/img/20170417163932crfsp.webp') ?>" 
      alt="CRF-SP" 
      style="
@@ -87,43 +90,33 @@
         right: 30px;
         height: 20%;
      ">
+
 <body>
     <div class="formulario">
-        <h2>INSERIR NOVA LICITAÇÃO</h2>
+        <h2>INSERIR INSTRUMENTO CONTRATUAL</h2>
 
-        <?php if (isset($sucesso)): ?>
+        <?php if (session()->getFlashdata('sucesso')): ?>
     <div class="mensagem-sucesso">
-        <?= $sucesso ?>
+        <?= session()->getFlashdata('sucesso') ?>
     </div>
 <?php endif; ?>
 
 
-        <form action="<?= base_url('contratos/salvar') ?>" method="post">
-            <label>Processo Administrativo</label>
-            <input type="text" name="processo_administrativo" required>
+        <form action="<?= base_url('instrumentos/salvar') ?>" method="post">
+            <label>Nº PROC</label>
+            <input type="text" name="numero_processo" required>
 
-            <label>Nome da Empresa</label>
-            <input type="text" name="nome_empresa" required>
+            <label>Objetivo do contrato</label>
+            <input type="text" name="objetivo_contrato" required>
 
-            <label>Serviço</label>
-            <input type="text" name="servico" required>
+            <label>CRT/ATA</label>
+            <input type="text" name="crt_ata">
 
-            <label>Gestor do contrato</label>
-            <input type="text" name="gestor_contrato">
+            <label>Empresa contratada</label>
+            <input type="text" name="empresa_contratada">
 
-            <label>Fiscal</label>
-            <input type="text" name="fiscal">
-
-            <label>Fiscal Substituto</label>
-            <input type="text" name="fiscal_substituto">
-
-            <label>Vigência</label>
-            <input type="date" name="vigencia">
-
-
-            <label>Informações</label>
-            <textarea name="informacoes" rows="3"></textarea>
-
+            <label>CPF/CNPJ</label>
+            <input type="text" name="cpf_cnpj">
             <button type="submit">Salvar</button>
         </form>
     </div>

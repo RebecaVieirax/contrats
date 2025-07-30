@@ -30,3 +30,6 @@ $routes->post('dominios/salvar', 'Dominios::salvar');
 $routes->get('dominios', 'Dominios::index');
 $routes->get('dominios/novo', 'Dominios::novo');
 $routes->post('dominios/salvar', 'Dominios::salvar');
+$routes->get('instrumentos/novo', 'Instrumentos::novo');
+$routes->post('instrumentos/salvar', 'Instrumentos::salvar');
+$routes->get('instrumentos', 'Instrumentos::index');
