@@ -33,3 +33,5 @@ $routes->post('dominios/salvar', 'Dominios::salvar');
 $routes->get('instrumentos/novo', 'Instrumentos::novo');
 $routes->post('instrumentos/salvar', 'Instrumentos::salvar');
 $routes->get('instrumentos', 'Instrumentos::index');
+$routes->get('pagamentos/novo', 'Pagamentos::novo');
+$routes->post('pagamentos/salvar', 'Pagamentos::salvar');
